@@ -21,7 +21,7 @@ class SettingsController {
         const { username } = request.params
         const settingsService = new SettingsService()
 
-        const settings = settingsService.findByUsername(username)
+        const settings = await settingsService.findByUsername(username)
 
         return response.json(settings)
     }
